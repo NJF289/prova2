@@ -1,6 +1,6 @@
 import Aside from "./components/Aside";
 import NavBar from "./components/NavBar";
-import { ThemeProvider } from "@/admin/Theme"// importar o tema instalado 
+import { ThemeProvider } from "@/app/admin/Theme"// importar o tema instalado 
 // da pagina componentes navbar ...
 export default function AdminLayout({
     children,

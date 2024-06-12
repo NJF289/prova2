@@ -1,4 +1,4 @@
-import Home from "@/admin/page";
+import Home from "@/app/admin/page";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Book, BookAIcon, FolderPen, HomeIcon, PersonStanding } from "lucide-react";
