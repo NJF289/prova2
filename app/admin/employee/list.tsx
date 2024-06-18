@@ -16,12 +16,12 @@ import {
     email: string
   }
   
-  export default async function ListEmployee() {
+  export default async function ListEmployees() {
     
-    const employees = await list()
+    const employee = await list()
     async function list(){
       revalidatePath("/admin/employee")
-     const response = await fetch("https://server20241-alpha.vercel.app/employees");
+     const response = await fetch("https://animated-invention-pv6p4r4755q37w4w-3000.app.github.dev/employeeshttps://server20241-alpha.vercel.app/employees");
       return response.json();
     }
   
@@ -38,7 +38,7 @@ import {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {employees.map((iten:IEmployee) => (
+          {employee.map((iten:IEmployee) => (
             <TableRow key={iten.id}>
               <TableCell className="font-medium">{iten.id}</TableCell>
               <TableCell>{iten.name}</TableCell>

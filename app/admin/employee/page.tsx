@@ -4,8 +4,8 @@ import ListEmployee from "./list";
 
 
 
-//clik em Estudante 
-export default function Student(){
+
+export default function Employee(){
     return(
         <div className=" w-full flex flex-col justify-center mt-6">
             <div className="flex justify-center mb-4">

@@ -21,26 +21,30 @@ const FormSchema = z.object({
   name: z.string().min(2, {
     message: "Nome deve conter no minimo 2 caracteres."
   }),
+   endereco: z.string().min(2,{
+    message: "Nome deve conter no minimo 2 caracteres."
+  }),
 })
 
-export default function SaveCourse() {
+export default function SaveCompany() {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
       name: "",
+      endereco: "",
     },
   })
 
-  async function onSubmit(course: z.infer<typeof FormSchema>) {
-    console.log(course)
+  async function onSubmit(company: z.infer<typeof FormSchema>) {
+    console.log(company)
     const requestOption={
     method: "POST",
     headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify(course)
+    body: JSON.stringify(company)
    }
-   const response = await fetch("https://server20241-alpha.vercel.app/courses", requestOption)
+   const response = await fetch("https://server20241-alpha.vercel.app/company", requestOption)
     form.reset();
-    alert("Curso cadastrado:")
+    alert("Empresa cadastrado:")
   }
   
 
@@ -52,9 +56,23 @@ export default function SaveCourse() {
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Nome Docurso</FormLabel>
+              <FormLabel>Nome da empresa</FormLabel>
               <FormControl>
-                <Input placeholder="Digite o curso" {...field} />
+                <Input placeholder="Digite o nome da" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+            
+          )}
+        />
+         <FormField
+          control={form.control}
+          name="endereco"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Endereco da empresa</FormLabel>
+              <FormControl>
+                <Input placeholder="Digite o enderecoEmail" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -64,5 +82,6 @@ export default function SaveCourse() {
         <Button type="submit">Submit</Button>
       </form>
     </Form>
+    
   )
 }

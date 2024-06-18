@@ -28,7 +28,7 @@ const FormSchema = z.object({
 }),
 })
 
-export default function SaveStudent() {
+export default function SaveEmployee() {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
@@ -46,9 +46,9 @@ export default function SaveStudent() {
     body: JSON.stringify(student)
    }
 
-   const response = await fetch("https://server20241-alpha.vercel.app/studants", requestOption);
+   const response = await fetch("https://animated-invention-pv6p4r4755q37w4w-3000.app.github.dev/employees", requestOption);
     form.reset();
-    alert("Estudante cadastrado. ")   
+    alert("Funcionario cadastrado. ")   
   }
    
 
@@ -60,9 +60,9 @@ export default function SaveStudent() {
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Nome Estudante</FormLabel>
+              <FormLabel>Nome Funcionario</FormLabel>
               <FormControl>
-                <Input placeholder="Digite o nome do estudante" {...field} />
+                <Input placeholder="Digite o nome do Funcionario" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -73,7 +73,7 @@ export default function SaveStudent() {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email do Estudante</FormLabel>
+              <FormLabel>Email do Funcionario</FormLabel>
               <FormControl>
                 <Input placeholder="Digite o Email" {...field} />
               </FormControl>
