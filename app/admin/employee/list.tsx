@@ -10,25 +10,25 @@ import {
   } from "@/components/ui/table"
   import { revalidatePath } from "next/cache";
   
-  interface IStudent{
+  interface IEmployee{
     id: number,
     name: string,
     email: string
   }
   
-  export default async function ListStudent() {
+  export default async function ListEmployee() {
     
-    const students = await list()
+    const employees = await list()
     async function list(){
-      revalidatePath("/admin/student")
-     const response = await fetch("https://server20241-alpha.vercel.app/studants");
+      revalidatePath("/admin/employee")
+     const response = await fetch("https://server20241-alpha.vercel.app/employees");
       return response.json();
     }
   
   
     return (
       <Table>
-        <TableCaption>Lista de Estudante</TableCaption>
+        <TableCaption>Lista de Funcionario</TableCaption>
         <TableHeader>
           <TableRow>
             <TableHead className="w-[100px]">ID</TableHead>
@@ -38,7 +38,7 @@ import {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {students.map((iten:IStudent) => (
+          {employees.map((iten:IEmployee) => (
             <TableRow key={iten.id}>
               <TableCell className="font-medium">{iten.id}</TableCell>
               <TableCell>{iten.name}</TableCell>

@@ -18,7 +18,7 @@ export default function Aside({className}:any) {
                 <a href="/admin/student">
                     <Button variant="ghost">
                         <PersonStanding/>
-                        Estudante
+                        Funcionario 
                     </Button>
                 </a>
                 <a href="/admin/course">

@@ -8,9 +8,7 @@ export default function Admin(){
             <h1 className="">
              Bem vindo à Area administrativa 
              </h1>
-             <Button>Salvar</Button>
-             <Button variant="destructive">Excluir</Button>
-             <Button variant="outline">Novo</Button>
+             
              
              <MenuSheet/>
         </div>
