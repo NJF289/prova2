@@ -46,7 +46,7 @@ export default function SaveEmployee() {
     body: JSON.stringify(student)
    }
 
-   const response = await fetch("https://animated-invention-pv6p4r4755q37w4w-3000.app.github.dev/employees", requestOption);
+   const response = await fetch("https://server20241-alpha.vercel.app/employee", requestOption);
     form.reset();
     alert("Funcionario cadastrado. ")   
   }

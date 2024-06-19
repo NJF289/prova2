@@ -58,11 +58,10 @@ export default function SaveCompany() {
             <FormItem>
               <FormLabel>Nome da empresa</FormLabel>
               <FormControl>
-                <Input placeholder="Digite o nome da" {...field} />
+                <Input placeholder="Digite o nome da Empresa" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
-            
           )}
         />
          <FormField
@@ -70,9 +69,9 @@ export default function SaveCompany() {
           name="endereco"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Endereco da empresa</FormLabel>
+              <FormLabel>Endereço da empresa</FormLabel>
               <FormControl>
-                <Input placeholder="Digite o enderecoEmail" {...field} />
+                <Input placeholder="Digite o endereço" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>

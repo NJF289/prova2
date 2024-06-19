@@ -21,7 +21,7 @@ import {
     const employee = await list()
     async function list(){
       revalidatePath("/admin/employee")
-     const response = await fetch("https://animated-invention-pv6p4r4755q37w4w-3000.app.github.dev/employeeshttps://server20241-alpha.vercel.app/employees");
+     const response = await fetch("https://server20241-alpha.vercel.app/employee");
       return response.json();
     }
   
